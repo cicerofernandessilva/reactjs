@@ -14,8 +14,10 @@ console.log(mascota.vivo);
 //adicionar propriedades y valores
 mascota.id = 20;
 console.log(mascota);
+console.log(mascota.id);
 
 //array
 
 mascota.raca = ["gato", "negro", "peludo"];
 console.log(mascota);
+console.log(mascota.raca);
