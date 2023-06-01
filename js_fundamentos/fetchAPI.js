@@ -9,4 +9,5 @@ fetch("https://pokeapi.co/api/v2/pokemon")
       //   console.log(element);
       console.log(element.name);
     });
-  });
+  })
+  .catch((error) => console.log(error));
