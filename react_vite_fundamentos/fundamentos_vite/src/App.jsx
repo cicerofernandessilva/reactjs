@@ -6,48 +6,21 @@
 import PropTypes from "prop-types";
 
 //components
-const MyButton = () => {
-  return <button>Hola React! Soy un boton!</button>;
-};
-
+import MyButton from "./componentes/MyButton";
 //uso del detecion del click
 
-const MyButtonClic = ({ text }) => {
-  // console.log(text);
-  const handleClick = (title) => {
-    console.log("Me deste click: " + title);
-  };
-  return <button onClick={() => handleClick(text)}>{text}</button>;
-};
+import MyButtonClic from "./componentes/MyButtonClick";
 
 //Operador ternário
 const OperadorTrue = "Sin, ustede acerto el operador";
 const OperadorFalse = "No, ustede no acerto el operador";
 
-const OnlineApp = () => {
-  return (
-    <div>
-      <h3>Online</h3>
-    </div>
-  );
-};
-const OfflineApp = () => {
-  return (
-    <div>
-      <h3>Offline</h3>
-    </div>
-  );
-};
+import OnlineApp from "./componentes/OnlineApp";
+
+import OfflineApp from "./componentes/OfflineApp";
 
 //operador &&
-const OperadorE = () => {
-  return (
-    <div>
-      <h4>Operador &&</h4>
-    </div>
-  );
-};
-
+import OperadorE from "./componentes/OperadorE";
 //importando imagenes
 
 import img1 from "./assets/images/img_1.jpg";
@@ -66,10 +39,6 @@ ButtonDin.propTypes = {
 // const ItemFrut = (props) => {
 //   return <li>{props.fruit}</li>;
 // };
-//props con desestructuraciob
-const ItemFrut = ({ fruit }) => {
-  return <li>{fruit}</li>;
-};
 
 //Checar usuário 2
 
@@ -80,8 +49,9 @@ const ItemFrut = ({ fruit }) => {
 //   return <p>User Offline😫</p>;
 // };
 
-const CheckUser = ({ user }) =>
-  user ? <p>User Online😄</p> : <p>User Offline😫</p>;
+import CheckUser from "./componentes/CheckUser";
+import FruitList from "./componentes/FruitList";
+import Fruit from "./componentes/fruit";
 
 const App = () => {
   //teste uso de fragment react
@@ -90,8 +60,8 @@ const App = () => {
   const classCenter = "text-center";
   const soma = 1 + 2;
   //ternário
-  const user = false;
-  const fruit = ["🍎", "🍏", "🍇", "🍐", "🍌", "🍉"];
+  const user = true;
+
   return (
     <>
       <div className="text-center">
@@ -116,21 +86,21 @@ const App = () => {
           {/* listas array*/}
           <p>Array normal</p>
           <ul>
-            <li>{fruit[0]}</li>
-            <li>{fruit[1]}</li>
-            <li>{fruit[2]}</li>
-            <li>{fruit[3]}</li>
-            <li>{fruit[4]}</li>
-            <li>{fruit[5]}</li>
+            <li>{Fruit[0]}</li>
+            <li>{Fruit[1]}</li>
+            <li>{Fruit[2]}</li>
+            <li>{Fruit[3]}</li>
+            <li>{Fruit[4]}</li>
+            <li>{Fruit[5]}</li>
           </ul>
         </div>
         <div className="grid-item">
           {/* listas array com map*/}
           <p>Array con map</p>
           <ul>
-            {fruit.map((fruit, index) => (
+            {Fruit.map((Fruit, index) => (
               <li>
-                {fruit} = {index}
+                {Fruit} = {index}
               </li>
             ))}
           </ul>
@@ -138,8 +108,8 @@ const App = () => {
         <div className="grid-item">
           <p>Array con map usando metodo key</p>
           <ul>
-            {fruit.map((fruit, index) => (
-              <li key={index}>{fruit}</li>
+            {Fruit.map((Fruit, index) => (
+              <li key={index}>{Fruit}</li>
             ))}
           </ul>
         </div>
@@ -152,11 +122,7 @@ const App = () => {
         </div>
         <div className="grid-item">
           <p>Array con map usando metodo key y props</p>
-          <ul>
-            {fruit.map((fruit, index) => (
-              <ItemFrut key={index} fruit={fruit}></ItemFrut>
-            ))}
-          </ul>
+          <FruitList />
         </div>
         <div className="grid-item">
           {/* User online or Offline */}
