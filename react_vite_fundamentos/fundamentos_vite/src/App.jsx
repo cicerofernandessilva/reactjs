@@ -51,7 +51,9 @@ ButtonDin.propTypes = {
 
 import CheckUser from "./componentes/CheckUser";
 import FruitList from "./componentes/FruitList";
+import FruitListTwo from "./componentes/FruitListTwo";
 import Fruit from "./componentes/fruit";
+import ButtonState from "./componentes/ButtonState";
 
 const App = () => {
   //teste uso de fragment react
@@ -61,6 +63,7 @@ const App = () => {
   const soma = 1 + 2;
   //ternário
   const user = true;
+  const fruitTwo = ["🍈", "🍉", "🍐"];
 
   return (
     <>
@@ -122,7 +125,11 @@ const App = () => {
         </div>
         <div className="grid-item">
           <p>Array con map usando metodo key y props</p>
-          <FruitList />
+          <FruitList fruit={Fruit} />
+        </div>
+        <div className="grid-item">
+          <p>Array con map usando metodo key y props 2</p>
+          <FruitListTwo fruit={fruitTwo} />
         </div>
         <div className="grid-item">
           {/* User online or Offline */}
@@ -134,6 +141,7 @@ const App = () => {
           <MyButtonClic text="buton2" />
           <MyButtonClic text="buton3" />
           <MyButtonClic text="buton4" />
+          <ButtonState></ButtonState>
         </div>
       </div>
     </>

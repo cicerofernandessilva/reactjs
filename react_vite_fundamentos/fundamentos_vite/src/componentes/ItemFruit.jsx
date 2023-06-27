@@ -1,15 +1,8 @@
 //props con desestructuraciob
-import Fruit from "./fruit";
 
-const ItemFruit = () => {
+const ItemFruit = (props) => {
   // return <li>{fruit}</li>;
-  return (
-    <>
-      {Fruit.map((Fruit, index) => (
-        <li key={index}>{Fruit}</li>
-      ))}
-    </>
-  );
+  return <li>{props.fruit}</li>;
 };
 
 export default ItemFruit;

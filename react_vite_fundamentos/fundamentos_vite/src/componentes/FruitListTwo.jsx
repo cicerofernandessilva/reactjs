@@ -1,6 +1,6 @@
 import ItemFruit from "./ItemFruit";
 
-const FruitList = ({ fruit }) => {
+const FruitListTwo = ({ fruit }) => {
   return (
     <ul>
       {fruit.map((fruit, index) => (
@@ -10,4 +10,4 @@ const FruitList = ({ fruit }) => {
   );
 };
 
-export default FruitList;
+export default FruitListTwo;
